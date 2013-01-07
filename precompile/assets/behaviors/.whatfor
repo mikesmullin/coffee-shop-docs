@@ -1,3 +1,0 @@
-javascript files which aren't exposed to the client-side
-until after they are precompiled
-i.e,. .js and CoffeeScript .js.coffee code
