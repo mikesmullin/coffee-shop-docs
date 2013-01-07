@@ -8,8 +8,8 @@ html '.no-js', lang: 'en', ->
   head ->
     title '{{settings.title}}'
     meta charset: 'utf-8'
-    link rel: 'icon', type: 'image/png', href: block 'cdn_url "/favicon.png"'
-    ie 'lt IE9', -> script src: block 'cdn_url "/tmp/html5shiv.js"'
+    link rel: 'icon', type: 'image/png', href: block 'cdn_url "favicon.png"'
+    ie 'lt IE9', -> script src: block 'cdn_url "assets/html5shiv.js"'
     yields 'head'
     yields 'head2'
   body class: '{{body_class}}', ->

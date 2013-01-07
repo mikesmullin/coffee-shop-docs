@@ -10,7 +10,7 @@ module.exports = {
       return attrs[file_attr] = _this.block("cdn_url " + (JSON.stringify(file)));
     };
     out = function(file) {
-      set_file(path.normalize('/assets/' + file));
+      set_file(path.normalize('assets/' + file));
       return tag(attrs);
     };
     if (process.env.ENV === 'production') {

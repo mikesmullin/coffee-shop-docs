@@ -3,7 +3,7 @@ path = require 'path'
 module.exports =
   _asset: (tag, attrs, file_attr, basename) ->
     set_file = (file) => attrs[file_attr] = @block "cdn_url #{JSON.stringify file}"
-    out = (file) -> set_file path.normalize '/assets/'+file; tag attrs
+    out = (file) -> set_file path.normalize 'assets/'+file; tag attrs
     if process.env.ENV is 'production' then out basename
     else
       require_fresh=(a)->delete require.cache[require.resolve a];require a
