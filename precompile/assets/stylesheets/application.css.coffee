@@ -15,16 +15,20 @@ creme_de_la_creme = '#f1d4af'
 powderpuff = '#ece5ce'
 charlotte = '#c5e0dc'
 white = '#fff'
+black = '#000'
 
 body ->
-  font_family "'Rambla', sans-serif"
+  font 'normal 400 1em/1.3em "Rambla", sans-serif'
 s '.logo, .logomark', ->
-  font_family "'Lobster', cursive"
+  font_family '"Lobster", cursive'
+em ->
+  font_style 'italic'
+
 
 body ->
   background creme_de_la_creme
   color banquette
-  font_family 'monospace'
+  line_height '1.3em'
 a ->
   color strawberry_sugar
   text_decoration 'none'
@@ -63,6 +67,7 @@ nav ->
     position 'relative'
     width '500px'
     text_align 'right'
+    font_size '1.2em'
     top '-50px'
     float 'right'
     li ->
@@ -82,10 +87,75 @@ s '.wrapper', ->
   margin '0 auto'
   padding '20px 0'
 
-header '#header', ->
+header ->
   background charlotte
-  color banquette
-  height '100px'
+  color black
+  padding '0 0 1em 0'
+  s '.wrapper', ->
+    padding "1em #{966-600}px 0 0"
+    width '600px'
+  h2 ->
+    font '600 1.9em/1.2em "Source Sans Pro", sans-serif'
+    margin '0 0 .6em 0'
+  p ->
+    line_height '1.5em'
 
-article '#body', ->
-  height '100px'
+article ->
+  color black
+  s '.wrapper', ->
+    width '600px'
+    padding "0 #{966-600}px 0 0"
+    margin '1em auto'
+  h2 ->
+    font '600 1.7em/1.3em "Source Sans Pro", sans-serif'
+    margin '0 0 .5em 0'
+  p ->
+    margin '1em 0'
+  s '.notice, .alert', ->
+    background white
+    padding '1em'
+    margin '1em 0 1em 0'
+    border_radius '5px'
+  s '.alert', ->
+    background strawberry_sugar
+    color black
+
+aside ->
+  position 'absolute'
+  width '100%'
+  top '7em'
+  s '.wrapper', ->
+    position 'relative'
+    padding '1em 0'
+    s '.content', ->
+      position 'absolute'
+      right 0
+      width '257px'
+      background creme_de_la_creme
+      border_radius '5px'
+      padding '1em'
+      h3 ->
+        font '700 1.3em "Rambla", sans-serif'
+        color black
+        margin '0 0 .5em 0'
+      ol ->
+        font '700 1em "Rambla", sans-serif'
+        list_style_type 'decimal'
+      ul ->
+        font '400 1em "Rambla", sans-serif'
+        list_style_type 'square'
+      s 'ul, ol', ->
+        margin '.5em 0 1em 0'
+        a ->
+          text_decoration 'underline'
+          color banquette
+        s 'li', ->
+          margin '0 0 .5em 1em'
+
+footer ->
+  background banquette
+  color white
+  margin '2em 0 0 0'
+  padding '1em 0'
+  p ->
+    margin '0 0 1em 0'

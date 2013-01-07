@@ -1,6 +1,6 @@
 content_for 'head', ->
   stylesheet 'application', media: 'all'
-  link href: 'http://fonts.googleapis.com/css?family=Rambla|Lobster', rel: 'stylesheet'
+  yields 'head2'
 
 section '#flashes', ->
   for k, type of ['alert', 'notice']
