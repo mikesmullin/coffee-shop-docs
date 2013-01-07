@@ -1,10 +1,244 @@
-/* line 3, precompile/assets/stylesheets/application.css.coffee */
+
+/* Credits */
+
+/* color palette credit: http://www.colourlovers.com/palette/49963/let_them_eat_cake */
+
+/* font credit: http://www.google.com/webfont */
+
+/* Reset */
+/* line 694, precompile/assets/stylesheets/application.css.coffee */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+/* line 698, precompile/assets/stylesheets/application.css.coffee */
+html {
+  line-height: 1; }
+/* line 701, precompile/assets/stylesheets/application.css.coffee */
+ol,
+ul {
+  list-style: none; }
+/* line 704, precompile/assets/stylesheets/application.css.coffee */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+/* line 707, precompile/assets/stylesheets/application.css.coffee */
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+/* line 710, precompile/assets/stylesheets/application.css.coffee */
+q,
+blockquote {
+  quotes: none; }
+/* line 775, precompile/assets/stylesheets/application.css.coffee */
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none; }
+/* line 713, precompile/assets/stylesheets/application.css.coffee */
+a img {
+  border: none; }
+/* line 786, precompile/assets/stylesheets/application.css.coffee */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+/* line 307, precompile/assets/stylesheets/application.css.coffee */
+* html {
+  font-size: 100%; }
+/* line 310, precompile/assets/stylesheets/application.css.coffee */
+html {
+  font-size: 16px;
+  line-height: 1.5em; }
+
+/* Globals */
+/* line 876, precompile/assets/stylesheets/application.css.coffee */
 body {
-  background: #ccc;
-  color: #333;
-  margin: 2em;
-  text-align: center;
+  font-family: 'Rambla', sans-serif; }
+/* line 880, precompile/assets/stylesheets/application.css.coffee */
+.logo,
+.logomark {
+  font-family: 'Lobster', cursive; }
+/* line 884, precompile/assets/stylesheets/application.css.coffee */
+body {
+  background: #f1d4af;
+  color: #774f38;
   font-family: monospace; }
-/* line 9, precompile/assets/stylesheets/application.css.coffee */
-body img {
-  border: 4px solid black; }
+/* line 890, precompile/assets/stylesheets/application.css.coffee */
+a {
+  color: #e08e79;
+  text-decoration: none; }
+/* line 893, precompile/assets/stylesheets/application.css.coffee */
+a:hover {
+  border-bottom: 2px dotted #e08e79;
+  padding-bottom: 1px; }
+/* line 899, precompile/assets/stylesheets/application.css.coffee */
+nav {
+  background: #774f38; }
+/* line 901, precompile/assets/stylesheets/application.css.coffee */
+nav .logomark {
+  display: inline;
+  float: left;
+  position: relative;
+  top: -.60em;
+  color: #e08e79;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+-moz-box-shadow:    0px 0px 6px rgba(0, 0, 0, 0.6);
+box-shadow:         0px 0px 6px rgba(0, 0, 0, 0.6);
+  background: #ece5ce;
+  border: 4px solid #e08e79;
+  font-size: 40px;
+  line-height: 40px;
+  padding: 15px;
+  margin: 0 15px 0 0;
+  -webkit-border-radius: 45px;
+  -moz-border-radius: 45px;
+  -ms-border-radius: 45px;
+  -o-border-radius: 45px;
+  border-radius: 45px;
+  display: none; }
+/* line 916, precompile/assets/stylesheets/application.css.coffee */
+nav h1 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 3em;
+  margin: .5em 0;
+  color: #fff; }
+/* line 921, precompile/assets/stylesheets/application.css.coffee */
+nav h1 span {
+  color: #e08e79; }
+/* line 925, precompile/assets/stylesheets/application.css.coffee */
+nav ul.right {
+  position: relative;
+  width: 500px;
+  text-align: right;
+  top: -50px;
+  display: inline;
+  float: right; }
+/* line 931, precompile/assets/stylesheets/application.css.coffee */
+nav ul.right li {
+  display: inline;
+  margin-right: 1em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: bold; }
+/* line 936, precompile/assets/stylesheets/application.css.coffee */
+nav ul.right li a {
+  color: white; }
+/* line 939, precompile/assets/stylesheets/application.css.coffee */
+nav ul.right li.toc {
+  background: rgba(0,0,0,.5);
+  padding: .75em .5em .75em 1em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px; }
+/* line 948, precompile/assets/stylesheets/application.css.coffee */
+.wrapper {
+  width: 966px;
+  margin: 0 auto;
+  padding: 20px 0; }
+/* line 954, precompile/assets/stylesheets/application.css.coffee */
+header#header {
+  background: #c5e0dc;
+  color: #774f38;
+  height: 100px; }
+/* line 960, precompile/assets/stylesheets/application.css.coffee */
+article#body {
+  height: 100px; }
