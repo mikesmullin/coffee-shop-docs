@@ -4,19 +4,19 @@ CoffeeAssets    = require 'coffee-assets'
 path            = CoffeeAssets.path # provides .xplat
 require_fresh   = CoffeeAssets.require_fresh # bypasses cache
 asset           = new CoffeeAssets asset_path: asset_path = 'static/public/assets'
+child_process   = require 'child_process'
 child_processes = {}
-exit_gracefully = ->
-  asset.safe_shutdown_child_processes child_processes, 'node', ->
-    process.exit 0
 
 task 'open', 'start main process loop', ->
   asset.watch 'gaze', 'Cakefile', (o) ->
     asset.notify o.title, 'Cakefile changed. restart...', 'pending', false, true
-    exit_gracefully()
+    child_processes.node.on 'exit', ->
+      process.exit 0
+    child_processes.node.kill 'SIGTERM'
 
   asset.watch 'coffeescripts', [
       in: 'precompile'
-      suffix: '/server.js.coffee'
+      suffix: '/*.js.coffee'
       out: ''
     ,
       in: 'precompile/db'
@@ -81,10 +81,13 @@ task 'open', 'start main process loop', ->
         globals: require_fresh path.xplat __dirname, 'static/app/helpers/templates'
     }, asset.write_manager o
 
-  asset.watch 'javascript', 'static/app/**/*.js', (o) ->
-    asset.notify 'gaze', "#{o.infile} changed. restarting node on next tick...", 'pending', false, true
-    process.nextTick ->
-      asset.restart_child_process child_processes.node
+  asset.watch 'javascript', [
+      in: 'static/app/**'
+    ,
+      in: ''
+  ], '/*.js', (o) ->
+    asset.notify 'gaze', "#{o.infile} changed. restarting node...", 'pending', false, true
+    child_processes.node.kill 'SIGTERM'
 
   asset.watch 'coffeejson', [
     in: 'precompile/config'
@@ -94,9 +97,8 @@ task 'open', 'start main process loop', ->
     out: asset_path
   ], '/**/*.json.coffee', asset.common_compiler()
 
-  child_processes.node_inspector = asset.child_process_loop 'node-inspector', 'node-inspector'
-  child_processes.node = asset.child_process_loop 'node', 'node', ['server.js']
+  #asset.child_process_loop child_processes, 'node-inspector', 'node-inspector'
+  asset.child_process_loop child_processes, 'node', 'node', ['server.js']
   process.on 'uncaughtException', (err) ->
-    console.log err.stack
-    exit_gracefully()
-  asset.forward_interrupt() # use CTRL+\ to kill
+    process.stderr.write "\nWARNING: handle your exceptions better: \n\n"+err.stack+"\n\n"
+    process.exit 1
