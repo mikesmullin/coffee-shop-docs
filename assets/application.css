@@ -173,9 +173,23 @@ a:hover {
   border-bottom: 2px dotted #e08e79;
   padding-bottom: 1px; }
 /* line 905, precompile/assets/stylesheets/application.css.coffee */
+ul,
+ol {
+  margin: 1em 0 1em 1em; }
+/* line 907, precompile/assets/stylesheets/application.css.coffee */
+ul li,
+ol li {
+  margin: 0 0 0 1em; }
+/* line 912, precompile/assets/stylesheets/application.css.coffee */
+ol {
+  list-style-type: decimal; }
+/* line 916, precompile/assets/stylesheets/application.css.coffee */
+ul {
+  list-style-type: square; }
+/* line 920, precompile/assets/stylesheets/application.css.coffee */
 nav {
   background: #774f38; }
-/* line 907, precompile/assets/stylesheets/application.css.coffee */
+/* line 922, precompile/assets/stylesheets/application.css.coffee */
 nav .logomark {
   display: inline;
   float: left;
@@ -197,16 +211,16 @@ box-shadow:         0px 0px 6px rgba(0, 0, 0, 0.6);
   -o-border-radius: 45px;
   border-radius: 45px;
   display: none; }
-/* line 922, precompile/assets/stylesheets/application.css.coffee */
+/* line 937, precompile/assets/stylesheets/application.css.coffee */
 nav h1 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   font-size: 3em;
   margin: .5em 0;
   color: #fff; }
-/* line 927, precompile/assets/stylesheets/application.css.coffee */
+/* line 942, precompile/assets/stylesheets/application.css.coffee */
 nav h1 span {
   color: #e08e79; }
-/* line 931, precompile/assets/stylesheets/application.css.coffee */
+/* line 946, precompile/assets/stylesheets/application.css.coffee */
 nav ul.right {
   position: relative;
   width: 500px;
@@ -215,16 +229,16 @@ nav ul.right {
   top: -50px;
   display: inline;
   float: right; }
-/* line 938, precompile/assets/stylesheets/application.css.coffee */
+/* line 953, precompile/assets/stylesheets/application.css.coffee */
 nav ul.right li {
   display: inline;
   margin-right: 1em;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: bold; }
-/* line 943, precompile/assets/stylesheets/application.css.coffee */
+/* line 958, precompile/assets/stylesheets/application.css.coffee */
 nav ul.right li a {
   color: white; }
-/* line 946, precompile/assets/stylesheets/application.css.coffee */
+/* line 961, precompile/assets/stylesheets/application.css.coffee */
 nav ul.right li.toc {
   background: rgba(0,0,0,.5);
   padding: .75em .5em .75em 1em;
@@ -233,43 +247,51 @@ nav ul.right li.toc {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   border-radius: 10px; }
-/* line 955, precompile/assets/stylesheets/application.css.coffee */
+/* line 970, precompile/assets/stylesheets/application.css.coffee */
 .wrapper {
   width: 966px;
   margin: 0 auto;
   padding: 20px 0; }
-/* line 961, precompile/assets/stylesheets/application.css.coffee */
+/* line 976, precompile/assets/stylesheets/application.css.coffee */
 header {
   background: #c5e0dc;
   color: #000;
   padding: 0 0 1em 0; }
-/* line 965, precompile/assets/stylesheets/application.css.coffee */
+/* line 980, precompile/assets/stylesheets/application.css.coffee */
 header .wrapper {
   padding: 1em 366px 0 0;
   width: 600px; }
-/* line 969, precompile/assets/stylesheets/application.css.coffee */
+/* line 984, precompile/assets/stylesheets/application.css.coffee */
 header h2 {
   font: 600 1.9em/1.2em "Source Sans Pro", sans-serif;
   margin: 0 0 .6em 0; }
-/* line 973, precompile/assets/stylesheets/application.css.coffee */
+/* line 988, precompile/assets/stylesheets/application.css.coffee */
 header p {
-  line-height: 1.5em; }
-/* line 978, precompile/assets/stylesheets/application.css.coffee */
+  line-height: 1.5em;
+  margin: 0 0 1em 0; }
+/* line 994, precompile/assets/stylesheets/application.css.coffee */
 article {
   color: #000; }
-/* line 980, precompile/assets/stylesheets/application.css.coffee */
+/* line 996, precompile/assets/stylesheets/application.css.coffee */
 article .wrapper {
   width: 600px;
   padding: 0 366px 0 0;
   margin: 1em auto; }
-/* line 985, precompile/assets/stylesheets/application.css.coffee */
+/* line 1001, precompile/assets/stylesheets/application.css.coffee */
 article h2 {
   font: 600 1.7em/1.3em "Source Sans Pro", sans-serif;
-  margin: 0 0 .5em 0; }
-/* line 989, precompile/assets/stylesheets/application.css.coffee */
+  margin: 1em 0 .5em 0; }
+/* line 1005, precompile/assets/stylesheets/application.css.coffee */
+article h3 {
+  font: 600 1.2em/1.3em "Source Sans Pro", sans-serif;
+  margin: 1em 0 .5em 0; }
+/* line 1009, precompile/assets/stylesheets/application.css.coffee */
 article p {
   margin: 1em 0; }
-/* line 992, precompile/assets/stylesheets/application.css.coffee */
+/* line 1012, precompile/assets/stylesheets/application.css.coffee */
+article a {
+  color: #774f38; }
+/* line 1015, precompile/assets/stylesheets/application.css.coffee */
 article .notice,
 article .alert {
   background: #fff;
@@ -280,20 +302,44 @@ article .alert {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px; }
-/* line 998, precompile/assets/stylesheets/application.css.coffee */
+/* line 1021, precompile/assets/stylesheets/application.css.coffee */
 article .alert {
   background: #e08e79;
   color: #000; }
-/* line 1004, precompile/assets/stylesheets/application.css.coffee */
+/* line 1025, precompile/assets/stylesheets/application.css.coffee */
+article pre {
+  font: normal .9em/0 Monaco, monospace;
+  padding: 0;
+  margin: 0; }
+/* line 1029, precompile/assets/stylesheets/application.css.coffee */
+article pre code {
+  line-height: 1.5em;
+  background: #222;
+  color: #c5e0dc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  display: block;
+  padding: 1em;
+  margin: 1em 0;
+  overflow-x: auto; }
+/* line 1038, precompile/assets/stylesheets/application.css.coffee */
+article pre code::selection,
+article pre code::-moz-selection {
+  background: #000;
+  color: #e08e79; }
+/* line 1046, precompile/assets/stylesheets/application.css.coffee */
 aside {
   position: absolute;
   width: 100%;
   top: 7em; }
-/* line 1008, precompile/assets/stylesheets/application.css.coffee */
+/* line 1050, precompile/assets/stylesheets/application.css.coffee */
 aside .wrapper {
   position: relative;
   padding: 1em 0; }
-/* line 1011, precompile/assets/stylesheets/application.css.coffee */
+/* line 1053, precompile/assets/stylesheets/application.css.coffee */
 aside .wrapper .content {
   position: absolute;
   right: 0;
@@ -305,38 +351,36 @@ aside .wrapper .content {
   -o-border-radius: 5px;
   border-radius: 5px;
   padding: 1em; }
-/* line 1018, precompile/assets/stylesheets/application.css.coffee */
+/* line 1060, precompile/assets/stylesheets/application.css.coffee */
 aside .wrapper .content h3 {
   font: 700 1.3em "Rambla", sans-serif;
   color: #000;
   margin: 0 0 .5em 0; }
-/* line 1023, precompile/assets/stylesheets/application.css.coffee */
+/* line 1065, precompile/assets/stylesheets/application.css.coffee */
 aside .wrapper .content ol {
-  font: 700 1em "Rambla", sans-serif;
-  list-style-type: decimal; }
-/* line 1027, precompile/assets/stylesheets/application.css.coffee */
+  font: 700 1em "Rambla", sans-serif; }
+/* line 1068, precompile/assets/stylesheets/application.css.coffee */
 aside .wrapper .content ul {
-  font: 400 1em "Rambla", sans-serif;
-  list-style-type: square; }
-/* line 1031, precompile/assets/stylesheets/application.css.coffee */
+  font: 400 1em "Rambla", sans-serif; }
+/* line 1071, precompile/assets/stylesheets/application.css.coffee */
 aside .wrapper .content ul,
 aside .wrapper .content ol {
   margin: .5em 0 1em 0; }
-/* line 1033, precompile/assets/stylesheets/application.css.coffee */
+/* line 1073, precompile/assets/stylesheets/application.css.coffee */
 aside .wrapper .content ul a,
 aside .wrapper .content ol a {
   text-decoration: underline;
   color: #774f38; }
-/* line 1037, precompile/assets/stylesheets/application.css.coffee */
+/* line 1077, precompile/assets/stylesheets/application.css.coffee */
 aside .wrapper .content ul li,
 aside .wrapper .content ol li {
   margin: 0 0 .5em 1em; }
-/* line 1045, precompile/assets/stylesheets/application.css.coffee */
+/* line 1085, precompile/assets/stylesheets/application.css.coffee */
 footer {
   background: #774f38;
   color: #fff;
   margin: 2em 0 0 0;
   padding: 1em 0; }
-/* line 1050, precompile/assets/stylesheets/application.css.coffee */
+/* line 1090, precompile/assets/stylesheets/application.css.coffee */
 footer p {
   margin: 0 0 1em 0; }
