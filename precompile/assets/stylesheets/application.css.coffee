@@ -35,6 +35,14 @@ a ->
   s '&:hover', ->
     border_bottom "2px dotted #{strawberry_sugar}"
     padding_bottom '1px'
+s 'ul, ol', ->
+  margin '1em 0 1em 1em'
+  s 'li', ->
+    margin '0 0 0 1em'
+ol ->
+  list_style_type 'decimal'
+ul ->
+  list_style_type 'square'
 
 nav ->
   background banquette
@@ -99,6 +107,7 @@ header ->
     margin '0 0 .6em 0'
   p ->
     line_height '1.5em'
+    margin '0 0 1em 0'
 
 article ->
   color black
@@ -108,9 +117,14 @@ article ->
     margin '1em auto'
   h2 ->
     font '600 1.7em/1.3em "Source Sans Pro", sans-serif'
-    margin '0 0 .5em 0'
+    margin '1em 0 .5em 0'
+  h3 ->
+    font '600 1.2em/1.3em "Source Sans Pro", sans-serif'
+    margin '1em 0 .5em 0'
   p ->
     margin '1em 0'
+  a ->
+    color banquette
   s '.notice, .alert', ->
     background white
     padding '1em'
@@ -119,6 +133,22 @@ article ->
   s '.alert', ->
     background strawberry_sugar
     color black
+  pre ->
+    font 'normal .9em/0 Monaco, monospace'
+    padding 0
+    margin 0
+    code ->
+      line_height '1.5em'
+      background '#222'
+      color charlotte
+      border_radius '5px'
+      display 'block'
+      padding '1em'
+      margin '1em 0'
+      overflow_x 'auto'
+      s '&::selection, &::-moz-selection', ->
+        background '#000'
+        color strawberry_sugar
 
 aside ->
   position 'absolute'
@@ -140,10 +170,8 @@ aside ->
         margin '0 0 .5em 0'
       ol ->
         font '700 1em "Rambla", sans-serif'
-        list_style_type 'decimal'
       ul ->
         font '400 1em "Rambla", sans-serif'
-        list_style_type 'square'
       s 'ul, ol', ->
         margin '.5em 0 1em 0'
         a ->

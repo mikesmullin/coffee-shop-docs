@@ -19,31 +19,94 @@ nav ->
 
 header ->
   div '.wrapper', ->
-    h2 'This documentation will introduce you to your new favorite web framework.'
-    p """
-      The CoffeeShop I18n (shorthand for <em>internationalization</em>) module which is shipped
-      with CoffeeShop (starting from CoffeeShop 0.0.x) provides an easy-to-use and extensible
-      framework for <strong>translating your application to a single custom language</strong>
-      other than Engilsh or for <strong>providing multi-language support</strong> in your
-      application.
-      """
+    h2 'This documentation will introduce you to your new favorite Node.js web framework.'
+    p ->
+      text """
+      We want to make you immediately productive with CoffeeShop. Know this is a living
+      document, and we welcome any contributions toward constant improvement."""
+      br()
+      'Let&rsquo;s get started!'
 
 article ->
   div '.wrapper', ->
-    p '.notice', """
-      The CoffeeShop framework provides you with all the necessary means for
-      internationalization/localization of your CoffeeShop application. You may,
-      however, wish to use various modules available to improve these basic features.
-      """
-    h2 '1 How it works'
-    p 'blah blah blah'
-    p '.alert', """
-      The CoffeeShop framework provides you with all the necessary means for
-      internationalization/localization of your CoffeeShop application. You may,
-      however, wish to use various modules available to improve these basic features.
-      """
-    p 'blah blah blah'
-    p 'blah blah blah'
+    #h2 '1 What are the goals of CoffeeShop?'
+    #ul ->
+    #  li 'Eliminate double-trees between server and client code.'
+    #  li 'Forsake flexibility whenever performance gains can be realized.'
+    #  li 'Emulate successful Ruby/Rails conventions.'
+    #  li 'Pursue the spirit of Sinatra-style minimalism.'
+    #  li 'Refactor dependencies with tests to maintain integrity.'
+    #  li 'Code fearlessly.'
+
+    h2 '1. Getting Started'
+    h3 '1.1. Install Node.js (using NVM is recommended)'
+    pre -> code """
+    sudo apt-get remove nodejs npm # if it was installed before this
+    curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+    nvm install 0.8.16 # we test on latest stable
+    nvm use 0.8.16
+    nvm alias default 0.8.16
+    """
+
+    h3 '1.2. Install CoffeeShop and Dependencies'
+    pre -> code """
+    # install CoffeeSprites/node-gd dependencies
+    sudo apt-get install libgd2-xpm-dev build-essential # libgd, build tools
+    sudo apt-get install pngcrush # optional optimizer makes PNG files smaller
+    # install CoffeeShop dependencies
+    npm install coffee-script -g # gives `cake` binary
+    # install CoffeeShop
+    npm install coffee-shop -g
+    """
+
+    h3 '1.3. Generate New Skeleton'
+    pre -> code """
+    shop new Bakery
+    cd Bakery/
+    """
+
+    h3 '1.4. Start the Server'
+    pre -> code """
+    shop open
+    """
+
+    h3 '1.5. Open Browser (using Google Chrome recommended)'
+    ul ->
+      li -> a href: 'http://localhost:3001/', 'http://localhost:3001/'
+
+    h3 '1.6. Explore Help'
+    pre -> code """
+    shop help
+    """
+
+    h2 '2. Contributing Back'
+    p -> 'Everyone is encouraged to help improve CoffeeShop. You will find our maintainers to be extremely friendly and responsive.'
+
+    h3 '2.1 Issuing a Pull Request'
+    ol ->
+      li ->
+        p  ->
+          text 'fork and clone'
+          a href: 'https://github.com/mikesmullin/coffee-shop', 'https://github.com/mikesmullin/coffee-shop'
+      li -> 'edit to heart&rsquo;s content'
+      li ->
+        p 'publish to your fork:'
+        pre -> code 'git commit && git push'
+      li 'issue pull request to official fork, and we will review and approve or provide feedback.'
+
+    h2 '3. Further Reading'
+    ul ->
+      li 'CoffeeTemplates'
+      li 'CoffeeStylesheets'
+
+    #p '.notice', """
+    #  We welcome your contributions toward the improvement of this guide.
+    #  """
+    #p '.alert', """
+    #  The CoffeeShop framework provides you with all the necessary means for
+    #  internationalization/localization of your CoffeeShop application. You may,
+    #  however, wish to use various modules available to improve these basic features.
+    #  """
 
 aside ->
   div '.wrapper', ->
@@ -51,27 +114,25 @@ aside ->
       h3 'Chapters'
       ol ->
         li ->
-          a href: '#', 'How I18n in CoffeeShop Works'
+          a href: '#', 'Getting Started'
           ul ->
             li ->
-              a href: '#', 'The Overall Architecture of the Library'
+              a href: '#', 'Install Node.js'
             li ->
-              a href: '#', 'The Public I18n API'
+              a href: '#', 'Install CoffeeShop'
+            li ->
+              a href: '#', 'Generate New Skeleton'
+            li ->
+              a href: '#', 'Start the Server'
+            li ->
+              a href: '#', 'Open Browser'
+            li ->
+              a href: '#', 'Explore Help'
         li ->
-          a href: '#', 'Setup the CoffeeShop Application for Internationalization'
+          a href: '#', 'Contributing Back'
           ul ->
             li ->
-              a href: '#', 'Configure the I18n Module'
-            li ->
-              a href: '#', 'Optional: Custom I18n Configuration Setup'
-            li ->
-              a href: '#', 'Setting and Passing the Locale'
-            li ->
-              a href: '#', 'Setting the Locale from the Domain Name'
-            li ->
-              a href: '#', 'Setting the Locale from the URL Params'
-            li ->
-              a href: '#', 'Setting the Locale from the Client Supplied Information'
+              a href: '#', 'Issuing a Pull Request'
 
 footer ->
   div '.wrapper', ->
